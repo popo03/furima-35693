@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
+
   validates :nickname, presence: true
   # validates :email, presence: true, uniqueness: true, inclusion: {in:('@')}
   # validates :encrypted_password, presence: true, length: {minmum:6 }, format: {with: /\A[a-z0-9]+\z/i }
