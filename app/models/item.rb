@@ -13,9 +13,9 @@ class Item < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validates :image, presence: true
-  validates :category_id, numericality: { other_than: 1 }
-  validates :status_id, numericality: { other_than: 1 }
-  validates :burden_id, numericality: { other_than: 1 }
-  validates :prefecture_id, numericality: { other_than: 1 }
-  validates :date_id, numericality: { other_than: 1 }
+  validates :category_id, numericality: { other_than: 0 }
+  validates :status_id, numericality: { other_than: 0 }
+  validates :burden_id, numericality: { other_than: 0 }
+  validates :prefecture_id, numericality: { other_than: 0 }
+  validates :date_id, numericality: { other_than: 0 }
 end
