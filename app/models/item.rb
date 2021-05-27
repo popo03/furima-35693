@@ -4,7 +4,7 @@ class Item < ApplicationRecord
   belongs_to :status
   belongs_to :burden
   belongs_to :prefecture
-  belongs_to :date
+  belongs_to :delivery_date
 
   belongs_to :user
   has_one_attached :image
@@ -17,5 +17,5 @@ class Item < ApplicationRecord
   validates :status_id, numericality: { other_than: 0 }
   validates :burden_id, numericality: { other_than: 0 }
   validates :prefecture_id, numericality: { other_than: 0 }
-  validates :date_id, numericality: { other_than: 0 }
+  validates :delivery_date_id, numericality: { other_than: 0 }
 end
