@@ -68,31 +68,31 @@ RSpec.describe Item, type: :model do
       end
 
       it 'category_idが0では登録できないこと' do
-        @item.category_id = ' 0 '
+        @item.category_id =  0 
         @item.valid?
         expect(@item.errors.full_messages).to include("Category must be other than 0")
       end
 
       it 'status_idが0では登録できないこと' do
-        @item.status_id = ' 0 '
+        @item.status_id =  0 
         @item.valid?
         expect(@item.errors.full_messages).to include("Status must be other than 0")
       end
 
       it 'burden_idが0では登録できないこと' do
-        @item.burden_id = ' 0 '
+        @item.burden_id =  0 
         @item.valid?
         expect(@item.errors.full_messages).to include("Burden must be other than 0")
       end
 
       it 'prefecture_idが0では登録できないこと' do
-        @item.prefecture_id = ' 0 '
+        @item.prefecture_id =  0 
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture must be other than 0")
       end
 
       it 'delivery_date_idが0では登録できないこと' do
-        @item.delivery_date_id = ' 0 '
+        @item.delivery_date_id =  0 
         @item.valid?
         expect(@item.errors.full_messages).to include("Delivery date must be other than 0")
       end
