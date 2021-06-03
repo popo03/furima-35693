@@ -1,10 +1,12 @@
 class OrderShipping
+  attr_accessor :token
   include ActiveModel::Model
   attr_accessor :user_id, :item_id, :postal_code, :prefecture_id, :city, :house_number, :building_name, :call_number
 
   with_options presence: true do
     validates :user_id
     validates :item_id
+    validates :token
     validates :postal_code, format: { with: /\A\d{3}[-]\d{4}\z/ }
     validates :city
     validates :house_number
