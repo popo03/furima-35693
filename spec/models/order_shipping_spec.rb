@@ -75,6 +75,18 @@ RSpec.describe OrderShipping, type: :model do
         @order_shipping.valid?
         expect(@order_shipping.errors.full_messages).to include("Call number is invalid")
       end
+
+      it 'call_numberが英数字混合なら登録できないこと' do
+        @order_shipping.call_number = '090aaaa1111'
+        @order_shipping.valid?
+        expect(@order_shipping.errors.full_messages).to include("Call number is invalid")
+      end
+
+      it 'call_numberが全角数字ならなら登録できないこと' do
+        @order_shipping.call_number = '０９０１１１１２２２２'
+        @order_shipping.valid?
+        expect(@order_shipping.errors.full_messages).to include("Call number is invalid")
+      end
     end
   end
 end
