@@ -13,6 +13,11 @@ RSpec.describe OrderShipping, type: :model do
       it 'すべての情報があれば登録できる' do
         expect(@order_shipping).to be_valid
       end
+
+      it 'building_nameが空でも登録できる' do
+        @order_shipping.building_name = ''
+        expect(@order_shipping).to be_valid
+      end
     end
 
     context '内容に問題がある場合' do
@@ -61,6 +66,12 @@ RSpec.describe OrderShipping, type: :model do
 
       it 'call_numberが12桁以上では登録できないこと' do
         @order_shipping.call_number = '090111122223'
+        @order_shipping.valid?
+        expect(@order_shipping.errors.full_messages).to include("Call number is invalid")
+      end
+
+      it 'call_numberが9桁以下なら登録できないこと' do
+        @order_shipping.call_number = '090111222'
         @order_shipping.valid?
         expect(@order_shipping.errors.full_messages).to include("Call number is invalid")
       end
