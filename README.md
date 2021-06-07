@@ -53,6 +53,7 @@ belongs_to :item
 has_one    :shipping
 
 
+
 ## shippings テーブル
 
 | Column        | Type       | Options                        |
