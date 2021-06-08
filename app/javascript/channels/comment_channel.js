@@ -14,8 +14,6 @@ consumer.subscriptions.create("CommentChannel", {
     const comments = document.getElementById('comments');
     const newComment = document.getElementById('comment_text');
     comments.insertAdjacentHTML('afterbegin', html);
-    // comments.disabled = false;
     newComment.value='';
-    // newComment.disabled = false;
   }
 });
